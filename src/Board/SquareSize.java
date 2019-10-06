@@ -1,3 +1,5 @@
+package Board;
+
 public enum SquareSize {
     SQUARESIZE(BoardSize.BOARDSIZE.getSizeX() / 8, BoardSize.BOARDSIZE.getSizeY() / 8);
 
