@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Board extends JPanel {
     public Board(){
-        setName("Schackspel");
+        setName("CHESSGAME");
         setBackground(Color.WHITE);
         setPreferredSize(new Dimension(BoardSize.BOARDSIZE.getSizeX(),BoardSize.BOARDSIZE.getSizeY()));
     }

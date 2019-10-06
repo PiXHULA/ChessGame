@@ -2,11 +2,31 @@ public enum Squares {
 
 
 
-    A1(0,0),A2(50,0),A3(100,0),A4(150,0),
-    A5(200,0),A6(250,0),A7(300,0),A8(350,0),
+    A1(SquareSize.SQUARESIZE.getSizeX() - SquareSize.SQUARESIZE.getSizeX(),
+            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+    A2(SquareSize.SQUARESIZE.getSizeX(),
+            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+    A3(SquareSize.SQUARESIZE.getSizeX() * 2,
+            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+    A4(SquareSize.SQUARESIZE.getSizeX() * 3,
+            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+    A5(SquareSize.SQUARESIZE.getSizeX() * 4,
+            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+    A6(SquareSize.SQUARESIZE.getSizeX() * 5
+            ,SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+    A7(SquareSize.SQUARESIZE.getSizeX() * 6,
+            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+    A8(SquareSize.SQUARESIZE.getSizeX() * 7,
+            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
 
-    B1(A1.getCoordX(),50),B2(A2.getCoordX(),50),B3(A3.getCoordX(),50),B4(A4.getCoordX(),50),
-    B5(A5.getCoordX(),50),B6(A6.getCoordX(),50),B7(A7.getCoordX(),50),B8(A8.getCoordX(),50),
+    B1(A1.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
+    B2(A2.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
+    B3(A3.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
+    B4(A4.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
+    B5(A5.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
+    B6(A6.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
+    B7(A7.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
+    B8(A8.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
 
     C1(A1.getCoordX(),B1.getCoordY() * 2),C2(A2.getCoordX(),B1.getCoordY() * 2),
     C3(A3.getCoordX(),B1.getCoordY() * 2),C4(A4.getCoordX(),B1.getCoordY() * 2),

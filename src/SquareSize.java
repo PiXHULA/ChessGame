@@ -1,10 +1,10 @@
-public enum BoardSize {
-    BOARDSIZE(800,800);
+public enum SquareSize {
+    SQUARESIZE(BoardSize.BOARDSIZE.getSizeX() / 8, BoardSize.BOARDSIZE.getSizeY() / 8);
 
     private int sizeX;
     private int sizeY;
 
-    BoardSize (int x, int y){
+    SquareSize(int x, int y) {
         this.sizeX = x;
         this.sizeY = y;
     }
