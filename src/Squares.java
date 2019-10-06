@@ -1,21 +1,26 @@
 public enum Squares {
-
-
-
+    //FIRST ROW SET THE COORDS FOR THE REST OF THE BOARD
     A1(SquareSize.SQUARESIZE.getSizeX() - SquareSize.SQUARESIZE.getSizeX(),
             SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+
     A2(SquareSize.SQUARESIZE.getSizeX(),
             SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+
     A3(SquareSize.SQUARESIZE.getSizeX() * 2,
             SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+
     A4(SquareSize.SQUARESIZE.getSizeX() * 3,
             SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+
     A5(SquareSize.SQUARESIZE.getSizeX() * 4,
             SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+
     A6(SquareSize.SQUARESIZE.getSizeX() * 5
             ,SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+
     A7(SquareSize.SQUARESIZE.getSizeX() * 6,
             SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+
     A8(SquareSize.SQUARESIZE.getSizeX() * 7,
             SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
 
