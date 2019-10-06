@@ -1,5 +1,8 @@
 package Board;
 
+
+import ChessPieces.Pawn;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -105,6 +108,11 @@ public class Board extends JPanel {
         paintBlackSquare(g, Squares.H6.getCoordX(),Squares.H6.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
         paintWhiteSquare(g, Squares.H7.getCoordX(),Squares.H7.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
         paintBlackSquare(g, Squares.H8.getCoordX(),Squares.H8.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
+
+        Pawn wP1 = new Pawn();
+        Pawn bP1 = new Pawn();
+        wP1.paintWhitePawn(g, Squares.A1.getCoordX(),Squares.A1.getCoordY());
+        bP1.paintBlackPawn(g, Squares.H1.getCoordX(),Squares.H1.getCoordY());
 
     }
 }
