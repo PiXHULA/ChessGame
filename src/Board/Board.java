@@ -31,6 +31,7 @@ public class Board extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+
         //FIRST ROW
         paintBlackSquare(g, Squares.A1.getCoordX(),Squares.A1.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
         paintWhiteSquare(g, Squares.A2.getCoordX(),Squares.A2.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
@@ -112,7 +113,7 @@ public class Board extends JPanel {
         paintBlackSquare(g, Squares.H8.getCoordX(),Squares.H8.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
 
         //WHITE CHESSPLAYER
-        Piece wP1 = new Pawn();
+        Pawn wP1 = new Pawn();
         Piece wP2 = new Pawn();
         Piece wP3 = new Pawn();
         Piece wP4 = new Pawn();
@@ -145,6 +146,14 @@ public class Board extends JPanel {
         wB2.paintWhitePiece(g,Squares.A6.getCoordX(),Squares.A6.getCoordY());
         wQ1.paintWhitePiece(g,Squares.A4.getCoordX(),Squares.A4.getCoordY());
         wK1.paintWhitePiece(g,Squares.A5.getCoordX(),Squares.A5.getCoordY());
+
+        wP1.moveFromLocation(g, Squares.B1);
+        wP1.movetoLocation(g, Squares.B1, Squares.C1);
+
+        wP1.moveFromLocation(g, Squares.C1);
+        wP1.movetoLocation(g, Squares.D1, Squares.D1);
+
+
         //BLACK CHESSPLAYER
         Piece bP1 = new Pawn();
         Piece bP2 = new Pawn();
@@ -176,7 +185,6 @@ public class Board extends JPanel {
         bB1.paintBlackPiece(g,Squares.H6.getCoordX(),Squares.H6.getCoordY());
         bK1.paintBlackPiece(g,Squares.H4.getCoordX(),Squares.H4.getCoordY());
         bQ1.paintBlackPiece(g,Squares.H5.getCoordX(),Squares.H5.getCoordY());
-
 
     }
 }
