@@ -7,17 +7,26 @@ import javax.swing.*;
 import java.awt.*;
 
 //BONDE
-public class Pawn extends JPanel implements Movement {
+public class Pawn extends Piece {
 
-    public static final Color white     = new Color(255, 255, 255);
-    public static final Color black     = new Color(0, 0, 0);
-    public void paintWhitePawn(Graphics g, int coordX, int coordY){
-        g.setColor(white);
-        g.fillRect(coordX / 2,coordY / 2, SquareSize.SQUARESIZE.getSizeX() / 2,SquareSize.SQUARESIZE.getSizeY() / 2);
+    @Override
+    public void paintWhitePiece(Graphics g, int coordX, int coordY){
+        g.setColor(Color.green);
+        g.fillRect(coordX + 19,coordY + 19, SquareSize.SQUARESIZE.getSizeX() / 2
+                ,SquareSize.SQUARESIZE.getSizeY() / 2);
+        g.setColor(Color.red);
+        g.setFont(new Font("Arial", Font.BOLD, 20));
+        g.drawString("P", coordX + 30, coordY + 45);
     }
-    public void paintBlackPawn(Graphics g, int coordX, int coordY){
-        g.setColor(black);
-        g.fillRect(coordX / 2,coordY / 2, SquareSize.SQUARESIZE.getSizeX() / 2,SquareSize.SQUARESIZE.getSizeY() / 2);
+
+    @Override
+    public void paintBlackPiece(Graphics g, int coordX, int coordY){
+        g.setColor(Color.red);
+        g.fillRect(coordX + 19,coordY + 19 ,SquareSize.SQUARESIZE.getSizeX() / 2
+                ,SquareSize.SQUARESIZE.getSizeY() / 2);
+        g.setColor(Color.green);
+        g.setFont(new Font("Arial", Font.BOLD, 20));
+        g.drawString("P", coordX + 30, coordY + 45);
     }
 
     @Override
@@ -34,4 +43,5 @@ public class Pawn extends JPanel implements Movement {
     public void showMovement() {
 
     }
+
 }

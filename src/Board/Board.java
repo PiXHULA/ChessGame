@@ -1,10 +1,12 @@
 package Board;
 
 
-import ChessPieces.Pawn;
+import ChessPieces.*;
 
 import javax.swing.*;
 import java.awt.*;
+
+
 
 public class Board extends JPanel {
 
@@ -23,7 +25,7 @@ public class Board extends JPanel {
     public Board(){
         setName("CHESSGAME");
         setBackground(Color.WHITE);
-        setPreferredSize(new Dimension(BoardSize.BOARDSIZE.getSizeX(),BoardSize.BOARDSIZE.getSizeY()));
+        setPreferredSize(new Dimension(BoardSize.BOARDSIZE.getSizeX(), BoardSize.BOARDSIZE.getSizeY()));
     }
 
     @Override
@@ -109,10 +111,72 @@ public class Board extends JPanel {
         paintWhiteSquare(g, Squares.H7.getCoordX(),Squares.H7.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
         paintBlackSquare(g, Squares.H8.getCoordX(),Squares.H8.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
 
-        Pawn wP1 = new Pawn();
-        Pawn bP1 = new Pawn();
-        wP1.paintWhitePawn(g, Squares.A1.getCoordX(),Squares.A1.getCoordY());
-        bP1.paintBlackPawn(g, Squares.H1.getCoordX(),Squares.H1.getCoordY());
+        //WHITE CHESSPLAYER
+        Piece wP1 = new Pawn();
+        Piece wP2 = new Pawn();
+        Piece wP3 = new Pawn();
+        Piece wP4 = new Pawn();
+        Piece wP5 = new Pawn();
+        Piece wP6 = new Pawn();
+        Piece wP7 = new Pawn();
+        Piece wP8 = new Pawn();
+        Piece wB1 = new Bishop();
+        Piece wB2 = new Bishop();
+        Piece wKn1 = new Knight();
+        Piece wKn2 = new Knight();
+        Piece wR1 = new Rook();
+        Piece wR2 = new Rook();
+        Piece wQ1 = new Queen();
+        Piece wK1 = new King();
+
+        wP1.paintWhitePiece(g, Squares.B1.getCoordX(),Squares.B1.getCoordY());
+        wP2.paintWhitePiece(g, Squares.B2.getCoordX(),Squares.B2.getCoordY());
+        wP3.paintWhitePiece(g, Squares.B3.getCoordX(),Squares.B3.getCoordY());
+        wP4.paintWhitePiece(g, Squares.B4.getCoordX(),Squares.B4.getCoordY());
+        wP5.paintWhitePiece(g, Squares.B5.getCoordX(),Squares.B5.getCoordY());
+        wP6.paintWhitePiece(g, Squares.B6.getCoordX(),Squares.B6.getCoordY());
+        wP7.paintWhitePiece(g, Squares.B7.getCoordX(),Squares.B7.getCoordY());
+        wP8.paintWhitePiece(g, Squares.B8.getCoordX(),Squares.B8.getCoordY());
+        wR1.paintWhitePiece(g, Squares.A1.getCoordX(),Squares.A1.getCoordY());
+        wR2.paintWhitePiece(g, Squares.A8.getCoordX(),Squares.A8.getCoordY());
+        wKn1.paintWhitePiece(g,Squares.A2.getCoordX(),Squares.A2.getCoordY());
+        wKn2.paintWhitePiece(g,Squares.A7.getCoordX(),Squares.A7.getCoordY());
+        wB1.paintWhitePiece(g,Squares.A3.getCoordX(),Squares.A3.getCoordY());
+        wB2.paintWhitePiece(g,Squares.A6.getCoordX(),Squares.A6.getCoordY());
+        wQ1.paintWhitePiece(g,Squares.A4.getCoordX(),Squares.A4.getCoordY());
+        wK1.paintWhitePiece(g,Squares.A5.getCoordX(),Squares.A5.getCoordY());
+        //BLACK CHESSPLAYER
+        Piece bP1 = new Pawn();
+        Piece bP2 = new Pawn();
+        Piece bP3 = new Pawn();
+        Piece bP4 = new Pawn();
+        Piece bP5 = new Pawn();
+        Piece bP6 = new Pawn();
+        Piece bP7 = new Pawn();
+        Piece bP8 = new Pawn();
+        Piece bB1 = new Bishop();
+        Piece bKn1 = new Knight();
+        Piece bR1 = new Rook();
+        Piece bQ1 = new Queen();
+        Piece bK1 = new King();
+
+        bP1.paintBlackPiece(g, Squares.G1.getCoordX(),Squares.G1.getCoordY());
+        bP1.paintBlackPiece(g, Squares.G2.getCoordX(),Squares.G2.getCoordY());
+        bP1.paintBlackPiece(g, Squares.G3.getCoordX(),Squares.G3.getCoordY());
+        bP1.paintBlackPiece(g, Squares.G4.getCoordX(),Squares.G4.getCoordY());
+        bP1.paintBlackPiece(g, Squares.G5.getCoordX(),Squares.G5.getCoordY());
+        bP1.paintBlackPiece(g, Squares.G6.getCoordX(),Squares.G6.getCoordY());
+        bP1.paintBlackPiece(g, Squares.G7.getCoordX(),Squares.G7.getCoordY());
+        bP1.paintBlackPiece(g, Squares.G8.getCoordX(),Squares.G8.getCoordY());
+        bR1.paintBlackPiece(g, Squares.H1.getCoordX(),Squares.H1.getCoordY());
+        bR1.paintBlackPiece(g, Squares.H8.getCoordX(),Squares.H8.getCoordY());
+        bKn1.paintBlackPiece(g,Squares.H2.getCoordX(),Squares.H2.getCoordY());
+        bKn1.paintBlackPiece(g,Squares.H7.getCoordX(),Squares.H7.getCoordY());
+        bB1.paintBlackPiece(g,Squares.H3.getCoordX(),Squares.H3.getCoordY());
+        bB1.paintBlackPiece(g,Squares.H6.getCoordX(),Squares.H6.getCoordY());
+        bK1.paintBlackPiece(g,Squares.H4.getCoordX(),Squares.H4.getCoordY());
+        bQ1.paintBlackPiece(g,Squares.H5.getCoordX(),Squares.H5.getCoordY());
+
 
     }
 }
