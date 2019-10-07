@@ -1,7 +1,8 @@
 package Board;
 
 public enum Squares {
-    //FIRST ROW SET THE COORDS FOR THE REST OF THE BOARD
+    //Coordinates for the whole board
+    //FIRST ROW SETS THE COORDS FOR THE REST OF THE BOARD
     A1(SquareSize.SQUARESIZE.getSizeX() - SquareSize.SQUARESIZE.getSizeX(),
             SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
 
