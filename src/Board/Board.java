@@ -170,13 +170,13 @@ public class Board extends JPanel {
         Piece bK1 = new King();
 
         bP1.paintBlackPiece(g, Squares.G1.getCoordX(),Squares.G1.getCoordY());
-        bP1.paintBlackPiece(g, Squares.G2.getCoordX(),Squares.G2.getCoordY());
-        bP1.paintBlackPiece(g, Squares.G3.getCoordX(),Squares.G3.getCoordY());
-        bP1.paintBlackPiece(g, Squares.G4.getCoordX(),Squares.G4.getCoordY());
-        bP1.paintBlackPiece(g, Squares.G5.getCoordX(),Squares.G5.getCoordY());
-        bP1.paintBlackPiece(g, Squares.G6.getCoordX(),Squares.G6.getCoordY());
-        bP1.paintBlackPiece(g, Squares.G7.getCoordX(),Squares.G7.getCoordY());
-        bP1.paintBlackPiece(g, Squares.G8.getCoordX(),Squares.G8.getCoordY());
+        bP2.paintBlackPiece(g, Squares.G2.getCoordX(),Squares.G2.getCoordY());
+        bP3.paintBlackPiece(g, Squares.G3.getCoordX(),Squares.G3.getCoordY());
+        bP4.paintBlackPiece(g, Squares.G4.getCoordX(),Squares.G4.getCoordY());
+        bP5.paintBlackPiece(g, Squares.G5.getCoordX(),Squares.G5.getCoordY());
+        bP6.paintBlackPiece(g, Squares.G6.getCoordX(),Squares.G6.getCoordY());
+        bP7.paintBlackPiece(g, Squares.G7.getCoordX(),Squares.G7.getCoordY());
+        bP8.paintBlackPiece(g, Squares.G8.getCoordX(),Squares.G8.getCoordY());
         bR1.paintBlackPiece(g, Squares.H1.getCoordX(),Squares.H1.getCoordY());
         bR1.paintBlackPiece(g, Squares.H8.getCoordX(),Squares.H8.getCoordY());
         bKn1.paintBlackPiece(g,Squares.H2.getCoordX(),Squares.H2.getCoordY());
