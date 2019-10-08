@@ -1,12 +1,8 @@
 package Board;
 
-
 import ChessPieces.*;
-
 import javax.swing.*;
 import java.awt.*;
-
-
 
 public class Board extends JPanel {
 
@@ -31,7 +27,9 @@ public class Board extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
+        TileClass board = new TileClass();
+        board.paintComponent(g);
+        /*
         //FIRST ROW
         paintBlackSquare(g, Squares.A1.getCoordX(),Squares.A1.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
         paintWhiteSquare(g, Squares.A2.getCoordX(),Squares.A2.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
@@ -111,6 +109,7 @@ public class Board extends JPanel {
         paintBlackSquare(g, Squares.H6.getCoordX(),Squares.H6.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
         paintWhiteSquare(g, Squares.H7.getCoordX(),Squares.H7.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
         paintBlackSquare(g, Squares.H8.getCoordX(),Squares.H8.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
+         */
 
         //WHITE CHESSPLAYER
         Pawn wP1 = new Pawn();
@@ -129,29 +128,31 @@ public class Board extends JPanel {
         Piece wR2 = new Rook();
         Piece wQ1 = new Queen();
         Piece wK1 = new King();
+//
+//        wP1.paintWhitePiece(g, Squares.B1.getCoordX(),Squares.B1.getCoordY());
+//        wP2.paintWhitePiece(g, Squares.B2.getCoordX(),Squares.B2.getCoordY());
+//        wP3.paintWhitePiece(g, Squares.B3.getCoordX(),Squares.B3.getCoordY());
+//        wP4.paintWhitePiece(g, Squares.B4.getCoordX(),Squares.B4.getCoordY());
+//        wP5.paintWhitePiece(g, Squares.B5.getCoordX(),Squares.B5.getCoordY());
+//        wP6.paintWhitePiece(g, Squares.B6.getCoordX(),Squares.B6.getCoordY());
+//        wP7.paintWhitePiece(g, Squares.B7.getCoordX(),Squares.B7.getCoordY());
+//        wP8.paintWhitePiece(g, Squares.B8.getCoordX(),Squares.B8.getCoordY());
+//        wR1.paintWhitePiece(g, Squares.A1.getCoordX(),Squares.A1.getCoordY());
+//        wR2.paintWhitePiece(g, Squares.A8.getCoordX(),Squares.A8.getCoordY());
+//        wKn1.paintWhitePiece(g,Squares.A2.getCoordX(),Squares.A2.getCoordY());
+//        wKn2.paintWhitePiece(g,Squares.A7.getCoordX(),Squares.A7.getCoordY());
+//        wB1.paintWhitePiece(g,Squares.A3.getCoordX(),Squares.A3.getCoordY());
+//        wB2.paintWhitePiece(g,Squares.A6.getCoordX(),Squares.A6.getCoordY());
+//        wQ1.paintWhitePiece(g,Squares.A4.getCoordX(),Squares.A4.getCoordY());
+//        wK1.paintWhitePiece(g,Squares.A5.getCoordX(),Squares.A5.getCoordY());
 
-        wP1.paintWhitePiece(g, Squares.B1.getCoordX(),Squares.B1.getCoordY());
-        wP2.paintWhitePiece(g, Squares.B2.getCoordX(),Squares.B2.getCoordY());
-        wP3.paintWhitePiece(g, Squares.B3.getCoordX(),Squares.B3.getCoordY());
-        wP4.paintWhitePiece(g, Squares.B4.getCoordX(),Squares.B4.getCoordY());
-        wP5.paintWhitePiece(g, Squares.B5.getCoordX(),Squares.B5.getCoordY());
-        wP6.paintWhitePiece(g, Squares.B6.getCoordX(),Squares.B6.getCoordY());
-        wP7.paintWhitePiece(g, Squares.B7.getCoordX(),Squares.B7.getCoordY());
-        wP8.paintWhitePiece(g, Squares.B8.getCoordX(),Squares.B8.getCoordY());
-        wR1.paintWhitePiece(g, Squares.A1.getCoordX(),Squares.A1.getCoordY());
-        wR2.paintWhitePiece(g, Squares.A8.getCoordX(),Squares.A8.getCoordY());
-        wKn1.paintWhitePiece(g,Squares.A2.getCoordX(),Squares.A2.getCoordY());
-        wKn2.paintWhitePiece(g,Squares.A7.getCoordX(),Squares.A7.getCoordY());
-        wB1.paintWhitePiece(g,Squares.A3.getCoordX(),Squares.A3.getCoordY());
-        wB2.paintWhitePiece(g,Squares.A6.getCoordX(),Squares.A6.getCoordY());
-        wQ1.paintWhitePiece(g,Squares.A4.getCoordX(),Squares.A4.getCoordY());
-        wK1.paintWhitePiece(g,Squares.A5.getCoordX(),Squares.A5.getCoordY());
+//        wP1.moveFromLocation(g, Squares.B1);
+        //paintWhiteSquare(g, Squares.B1.getCoordX(),Squares.B1.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
+//        wP1.movetoLocation(g, Squares.B1, Squares.C1);
 
-        wP1.moveFromLocation(g, Squares.B1);
-        wP1.movetoLocation(g, Squares.B1, Squares.C1);
-
-        wP1.moveFromLocation(g, Squares.C1);
-        wP1.movetoLocation(g, Squares.D1, Squares.D1);
+//        wP1.moveFromLocation(g, Squares.C1);
+        //paintBlackSquare(g, Squares.C1.getCoordX(),Squares.C1.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
+//        wP1.movetoLocation(g, Squares.D1, Squares.D1);
 
 
         //BLACK CHESSPLAYER
@@ -169,22 +170,22 @@ public class Board extends JPanel {
         Piece bQ1 = new Queen();
         Piece bK1 = new King();
 
-        bP1.paintBlackPiece(g, Squares.G1.getCoordX(),Squares.G1.getCoordY());
-        bP2.paintBlackPiece(g, Squares.G2.getCoordX(),Squares.G2.getCoordY());
-        bP3.paintBlackPiece(g, Squares.G3.getCoordX(),Squares.G3.getCoordY());
-        bP4.paintBlackPiece(g, Squares.G4.getCoordX(),Squares.G4.getCoordY());
-        bP5.paintBlackPiece(g, Squares.G5.getCoordX(),Squares.G5.getCoordY());
-        bP6.paintBlackPiece(g, Squares.G6.getCoordX(),Squares.G6.getCoordY());
-        bP7.paintBlackPiece(g, Squares.G7.getCoordX(),Squares.G7.getCoordY());
-        bP8.paintBlackPiece(g, Squares.G8.getCoordX(),Squares.G8.getCoordY());
-        bR1.paintBlackPiece(g, Squares.H1.getCoordX(),Squares.H1.getCoordY());
-        bR1.paintBlackPiece(g, Squares.H8.getCoordX(),Squares.H8.getCoordY());
-        bKn1.paintBlackPiece(g,Squares.H2.getCoordX(),Squares.H2.getCoordY());
-        bKn1.paintBlackPiece(g,Squares.H7.getCoordX(),Squares.H7.getCoordY());
-        bB1.paintBlackPiece(g,Squares.H3.getCoordX(),Squares.H3.getCoordY());
-        bB1.paintBlackPiece(g,Squares.H6.getCoordX(),Squares.H6.getCoordY());
-        bK1.paintBlackPiece(g,Squares.H4.getCoordX(),Squares.H4.getCoordY());
-        bQ1.paintBlackPiece(g,Squares.H5.getCoordX(),Squares.H5.getCoordY());
+//        bP1.paintBlackPiece(g, Squares.G1.getCoordX(),Squares.G1.getCoordY());
+//        bP2.paintBlackPiece(g, Squares.G2.getCoordX(),Squares.G2.getCoordY());
+//        bP3.paintBlackPiece(g, Squares.G3.getCoordX(),Squares.G3.getCoordY());
+//        bP4.paintBlackPiece(g, Squares.G4.getCoordX(),Squares.G4.getCoordY());
+//        bP5.paintBlackPiece(g, Squares.G5.getCoordX(),Squares.G5.getCoordY());
+//        bP6.paintBlackPiece(g, Squares.G6.getCoordX(),Squares.G6.getCoordY());
+//        bP7.paintBlackPiece(g, Squares.G7.getCoordX(),Squares.G7.getCoordY());
+//        bP8.paintBlackPiece(g, Squares.G8.getCoordX(),Squares.G8.getCoordY());
+//        bR1.paintBlackPiece(g, Squares.H1.getCoordX(),Squares.H1.getCoordY());
+//        bR1.paintBlackPiece(g, Squares.H8.getCoordX(),Squares.H8.getCoordY());
+//        bKn1.paintBlackPiece(g,Squares.H2.getCoordX(),Squares.H2.getCoordY());
+//        bKn1.paintBlackPiece(g,Squares.H7.getCoordX(),Squares.H7.getCoordY());
+//        bB1.paintBlackPiece(g,Squares.H3.getCoordX(),Squares.H3.getCoordY());
+//        bB1.paintBlackPiece(g,Squares.H6.getCoordX(),Squares.H6.getCoordY());
+//        bK1.paintBlackPiece(g,Squares.H4.getCoordX(),Squares.H4.getCoordY());
+//        bQ1.paintBlackPiece(g,Squares.H5.getCoordX(),Squares.H5.getCoordY());
 
     }
 }

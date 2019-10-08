@@ -1,10 +1,38 @@
 package Board;
 
+import javax.swing.*;
 import java.awt.*;
 
-public class TileClass {
+public class TileClass extends JPanel {
+
+    public void paintWhiteSquare(Graphics g, int coordX, int coordY, int sizeX, int sizeY){
+        g.setColor(Color.white);
+        g.fillRect(coordX,coordY,sizeX,sizeY);
+    }
+    public void paintBlackSquare(Graphics g, int coordX, int coordY, int sizeX, int sizeY){
+        g.setColor(Color.black);
+        g.fillRect(coordX,coordY,sizeX,sizeY);
+    }
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        for(int i = 1; i <= 8; i++){
+            for (int j = 1; j <= 8; j++){
+                if (i * j % 2 == 1)
+                    paintBlackSquare(g, i * SquareSize.SQUARESIZE.getSizeX(), j * SquareSize.SQUARESIZE.getSizeY(),
+                            SquareSize.SQUARESIZE.getSizeX(), SquareSize.SQUARESIZE.getSizeY());
+                if (i * j % 2 == 0){
+                    paintWhiteSquare(g, i * SquareSize.SQUARESIZE.getSizeX(), j * SquareSize.SQUARESIZE.getSizeY(),
+                            SquareSize.SQUARESIZE.getSizeX(), SquareSize.SQUARESIZE.getSizeY());
+                }
+            }
+        }
+    }
+
     /*
     //Skapa tiles med Squares storlekar och måla upp?
+
     public void paintWhiteSquare(Graphics g, int coordX, int coordY, int sizeX, int sizeY){
         g.setColor(white);
         g.fillRect(coordX,coordY,sizeX,sizeY);

@@ -1,8 +1,13 @@
 package Board;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 public enum Squares {
     //Coordinates for the whole board
     //FIRST ROW SETS THE COORDS FOR THE REST OF THE BOARD
+
     A1(SquareSize.SQUARESIZE.getSizeX() - SquareSize.SQUARESIZE.getSizeX(),
             SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
 
@@ -69,10 +74,13 @@ public enum Squares {
 
     private int coordX;
     private int coordY;
+    List<Squares> BoardList = new LinkedList<>();
+
 
     Squares(int x, int y){
         this.coordX = x;
         this.coordY = y;
+        //BoardList = Arrays.asList(A1, A2);
     }
 
     public int getCoordX() {
