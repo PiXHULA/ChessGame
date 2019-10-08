@@ -19,7 +19,8 @@ public class TileClass extends JPanel {
 
         for(int i = 1; i <= 8; i++){
             for (int j = 1; j <= 8; j++){
-                if (i * j % 2 == 1)
+                //PROBLEM! ATT SKRIVA UT RADEN A1-A8 och A1-G1. Fel i logiken för att skriva ut. ny if statement behövs här.
+                if (i * j % 2== 1)
                     paintBlackSquare(g, i * SquareSize.SQUARESIZE.getSizeX(), j * SquareSize.SQUARESIZE.getSizeY(),
                             SquareSize.SQUARESIZE.getSizeX(), SquareSize.SQUARESIZE.getSizeY());
                 if (i * j % 2 == 0){
