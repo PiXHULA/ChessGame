@@ -20,10 +20,16 @@ public class TileClass extends JPanel {
         for(int i = 1; i <= 8; i++){
             for (int j = 1; j <= 8; j++){
                 //PROBLEM! ATT SKRIVA UT RADEN A1-A8 och A1-G1. Fel i logiken för att skriva ut. ny if statement behövs här.
-                if (i * j % 2== 1)
+                if (i * SquareSize.SQUARESIZE.getSizeX() == SquareSize.SQUARESIZE.getSizeX())
+                    paintBlackSquare(g, SquareSize.SQUARESIZE.getSizeX(), j * SquareSize.SQUARESIZE.getSizeY(),
+                            SquareSize.SQUARESIZE.getSizeX(), SquareSize.SQUARESIZE.getSizeY());
+                else if (j * SquareSize.SQUARESIZE.getSizeY() == SquareSize.SQUARESIZE.getSizeY())
+                    paintWhiteSquare(g, i * SquareSize.SQUARESIZE.getSizeX(), j * SquareSize.SQUARESIZE.getSizeY(),
+                            SquareSize.SQUARESIZE.getSizeX(), SquareSize.SQUARESIZE.getSizeY());
+                else if (i * j % 2== 1)
                     paintBlackSquare(g, i * SquareSize.SQUARESIZE.getSizeX(), j * SquareSize.SQUARESIZE.getSizeY(),
                             SquareSize.SQUARESIZE.getSizeX(), SquareSize.SQUARESIZE.getSizeY());
-                if (i * j % 2 == 0){
+                else if (i * j % 2 == 0){
                     paintWhiteSquare(g, i * SquareSize.SQUARESIZE.getSizeX(), j * SquareSize.SQUARESIZE.getSizeY(),
                             SquareSize.SQUARESIZE.getSizeX(), SquareSize.SQUARESIZE.getSizeY());
                 }
