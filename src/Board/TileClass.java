@@ -17,25 +17,36 @@ public class TileClass extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        //SÄTTER UT NYA KOORDINATER SOM SKA RÄKNA UT STARTPUNKT X & Y och öka med SquareSize.SQUARESIZE.getSizeX
+
+        int coordX = 0;
+        int coordY = 0;
         for(int i = 1; i <= 8; i++){
+            if (coordX > 0)
+                coordY += SquareSize.SQUARESIZE.getSize();
             for (int j = 1; j <= 8; j++){
-                //PROBLEM! ATT SKRIVA UT RADEN A1-A8 och A1-G1. Fel i logiken för att skriva ut. ny if statement behövs här.
-                if (i * SquareSize.SQUARESIZE.getSizeX() == SquareSize.SQUARESIZE.getSizeX())
-                    paintBlackSquare(g, SquareSize.SQUARESIZE.getSizeX(), j * SquareSize.SQUARESIZE.getSizeY(),
-                            SquareSize.SQUARESIZE.getSizeX(), SquareSize.SQUARESIZE.getSizeY());
-                else if (j * SquareSize.SQUARESIZE.getSizeY() == SquareSize.SQUARESIZE.getSizeY())
-                    paintWhiteSquare(g, i * SquareSize.SQUARESIZE.getSizeX(), j * SquareSize.SQUARESIZE.getSizeY(),
-                            SquareSize.SQUARESIZE.getSizeX(), SquareSize.SQUARESIZE.getSizeY());
-                else if (i * j % 2== 1)
-                    paintBlackSquare(g, i * SquareSize.SQUARESIZE.getSizeX(), j * SquareSize.SQUARESIZE.getSizeY(),
-                            SquareSize.SQUARESIZE.getSizeX(), SquareSize.SQUARESIZE.getSizeY());
-                else if (i * j % 2 == 0){
-                    paintWhiteSquare(g, i * SquareSize.SQUARESIZE.getSizeX(), j * SquareSize.SQUARESIZE.getSizeY(),
-                            SquareSize.SQUARESIZE.getSizeX(), SquareSize.SQUARESIZE.getSizeY());
-                }
+//                if (i * j == 1 || i * j == 3 || i * j == 5 || i * j == 7)
+//                    paintBlackSquare(g, coordX , coordY,
+//                              SquareSize.SQUARESIZE.getSize(),SquareSize.SQUARESIZE.getSize());
+//                else if (i * j == 2 || i * j == 4 || i * j == 6 || i * j == 8)
+//                    paintWhiteSquare(g, coordX, coordY,
+//                            SquareSize.SQUARESIZE.getSize(), SquareSize.SQUARESIZE.getSize());
+                if (i * j % 2 == 1)
+                    paintBlackSquare(g,
+                            coordX, coordY,
+                            SquareSize.SQUARESIZE.getSize(), SquareSize.SQUARESIZE.getSize());
+                else if (i * j % 2 == 0)
+                    paintWhiteSquare(g,
+                            coordX, coordY,
+                            SquareSize.SQUARESIZE.getSize(), SquareSize.SQUARESIZE.getSize());
+            coordX += SquareSize.SQUARESIZE.getSize();
+            if (coordX == SquareSize.SQUARESIZE.getSize() * 8)
+                coordX = 0;
+
             }
         }
     }
+
 
     /*
     //Skapa tiles med Squares storlekar och måla upp?

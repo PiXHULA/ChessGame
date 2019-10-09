@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 
 //BONDE
+/*
 public class Pawn extends Piece {
 
     @Override
@@ -70,3 +71,5 @@ public class Pawn extends Piece {
     }
 
 }
+
+ */

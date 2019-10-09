@@ -4,7 +4,7 @@ import Board.SquareSize;
 import Board.Squares;
 
 import java.awt.*;
-
+/*
 //HÄST
 public class Knight extends Piece {
     @Override
@@ -48,3 +48,5 @@ public class Knight extends Piece {
 
     }
 }
+
+ */

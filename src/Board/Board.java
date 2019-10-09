@@ -20,7 +20,7 @@ public class Board extends JPanel {
 
     public Board(){
         setName("CHESSGAME");
-        setBackground(Color.WHITE);
+        setBackground(Color.gray);
         setPreferredSize(new Dimension(BoardSize.BOARDSIZE.getSizeX(), BoardSize.BOARDSIZE.getSizeY()));
     }
 
@@ -110,7 +110,7 @@ public class Board extends JPanel {
         paintWhiteSquare(g, Squares.H7.getCoordX(),Squares.H7.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
         paintBlackSquare(g, Squares.H8.getCoordX(),Squares.H8.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
          */
-
+/*
         //WHITE CHESSPLAYER
         Pawn wP1 = new Pawn();
         Piece wP2 = new Pawn();
@@ -186,6 +186,8 @@ public class Board extends JPanel {
 //        bB1.paintBlackPiece(g,Squares.H6.getCoordX(),Squares.H6.getCoordY());
 //        bK1.paintBlackPiece(g,Squares.H4.getCoordX(),Squares.H4.getCoordY());
 //        bQ1.paintBlackPiece(g,Squares.H5.getCoordX(),Squares.H5.getCoordY());
+
+*/
 
     }
 }

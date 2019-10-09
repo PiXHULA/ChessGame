@@ -6,6 +6,7 @@ import Board.Squares;
 import java.awt.*;
 
 //TORN
+/*
 public class Rook extends Piece {
     @Override
     public void paintWhitePiece(Graphics g, int coordX, int coordY) {
@@ -48,3 +49,5 @@ public class Rook extends Piece {
 
     }
 }
+*/
+

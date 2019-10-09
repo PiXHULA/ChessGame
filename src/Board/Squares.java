@@ -8,43 +8,33 @@ public enum Squares {
     //Coordinates for the whole board
     //FIRST ROW SETS THE COORDS FOR THE REST OF THE BOARD
 
-    A1(SquareSize.SQUARESIZE.getSizeX() - SquareSize.SQUARESIZE.getSizeX(),
-            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+    A1(SquareSize.SQUARESIZE.getSize() - SquareSize.SQUARESIZE.getSize(),
+       SquareSize.SQUARESIZE.getSize() - SquareSize.SQUARESIZE.getSize()),
+    A2(   SquareSize.SQUARESIZE.getSize(),    SquareSize.SQUARESIZE.getSize() - SquareSize.SQUARESIZE.getSize()),
+    A3(SquareSize.SQUARESIZE.getSize() * 2,SquareSize.SQUARESIZE.getSize() - SquareSize.SQUARESIZE.getSize()),
+    A4(SquareSize.SQUARESIZE.getSize() * 3,SquareSize.SQUARESIZE.getSize() - SquareSize.SQUARESIZE.getSize()),
+    A5(SquareSize.SQUARESIZE.getSize() * 4,SquareSize.SQUARESIZE.getSize() - SquareSize.SQUARESIZE.getSize()),
+    A6(SquareSize.SQUARESIZE.getSize() * 5,SquareSize.SQUARESIZE.getSize() - SquareSize.SQUARESIZE.getSize()),
+    A7(SquareSize.SQUARESIZE.getSize() * 6,SquareSize.SQUARESIZE.getSize() - SquareSize.SQUARESIZE.getSize()),
+    A8(SquareSize.SQUARESIZE.getSize() * 7,SquareSize.SQUARESIZE.getSize() - SquareSize.SQUARESIZE.getSize()),
 
-    A2(SquareSize.SQUARESIZE.getSizeX(),
-            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
+    B1(A1.getCoordX(),SquareSize.SQUARESIZE.getSize()),
+    B2(A2.getCoordX(),SquareSize.SQUARESIZE.getSize()),
+    B3(A3.getCoordX(),SquareSize.SQUARESIZE.getSize()),
+    B4(A4.getCoordX(),SquareSize.SQUARESIZE.getSize()),
+    B5(A5.getCoordX(),SquareSize.SQUARESIZE.getSize()),
+    B6(A6.getCoordX(),SquareSize.SQUARESIZE.getSize()),
+    B7(A7.getCoordX(),SquareSize.SQUARESIZE.getSize()),
+    B8(A8.getCoordX(),SquareSize.SQUARESIZE.getSize()),
 
-    A3(SquareSize.SQUARESIZE.getSizeX() * 2,
-            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
-
-    A4(SquareSize.SQUARESIZE.getSizeX() * 3,
-            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
-
-    A5(SquareSize.SQUARESIZE.getSizeX() * 4,
-            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
-
-    A6(SquareSize.SQUARESIZE.getSizeX() * 5
-            ,SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
-
-    A7(SquareSize.SQUARESIZE.getSizeX() * 6,
-            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
-
-    A8(SquareSize.SQUARESIZE.getSizeX() * 7,
-            SquareSize.SQUARESIZE.getSizeY() - SquareSize.SQUARESIZE.getSizeY()),
-
-    B1(A1.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
-    B2(A2.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
-    B3(A3.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
-    B4(A4.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
-    B5(A5.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
-    B6(A6.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
-    B7(A7.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
-    B8(A8.getCoordX(),SquareSize.SQUARESIZE.getSizeY()),
-
-    C1(A1.getCoordX(),B1.getCoordY() * 2),C2(A2.getCoordX(),B1.getCoordY() * 2),
-    C3(A3.getCoordX(),B1.getCoordY() * 2),C4(A4.getCoordX(),B1.getCoordY() * 2),
-    C5(A5.getCoordX(),B1.getCoordY() * 2),C6(A6.getCoordX(),B1.getCoordY() * 2),
-    C7(A7.getCoordX(),B1.getCoordY() * 2),C8(A8.getCoordX(),B1.getCoordY() * 2),
+    C1(A1.getCoordX(),B1.getCoordY() * 2),
+    C2(A2.getCoordX(),B1.getCoordY() * 2),
+    C3(A3.getCoordX(),B1.getCoordY() * 2),
+    C4(A4.getCoordX(),B1.getCoordY() * 2),
+    C5(A5.getCoordX(),B1.getCoordY() * 2),
+    C6(A6.getCoordX(),B1.getCoordY() * 2),
+    C7(A7.getCoordX(),B1.getCoordY() * 2),
+    C8(A8.getCoordX(),B1.getCoordY() * 2),
 
     D1(A1.getCoordX(),B1.getCoordY() * 3),D2(A2.getCoordX(),B1.getCoordY() * 3),
     D3(A3.getCoordX(),B1.getCoordY() * 3),D4(A4.getCoordX(),B1.getCoordY() * 3),
@@ -69,7 +59,8 @@ public enum Squares {
     H1(A1.getCoordX(),B1.getCoordY() * 7),H2(A2.getCoordX(),B1.getCoordY() * 7),
     H3(A3.getCoordX(),B1.getCoordY() * 7),H4(A4.getCoordX(),B1.getCoordY() * 7),
     H5(A5.getCoordX(),B1.getCoordY() * 7),H6(A6.getCoordX(),B1.getCoordY() * 7),
-    H7(A7.getCoordX(),B1.getCoordY() * 7),H8(A8.getCoordX(),B1.getCoordY() * 7);
+    H7(A7.getCoordX(),B1.getCoordY() * 7),
+    H8(A8.getCoordX(),B1.getCoordY() * 7);
 
 
     private int coordX;
@@ -80,7 +71,9 @@ public enum Squares {
     Squares(int x, int y){
         this.coordX = x;
         this.coordY = y;
-        //BoardList = Arrays.asList(A1, A2);
+    }
+    void addToList(Squares square){
+        BoardList.add(square);
     }
 
     public int getCoordX() {

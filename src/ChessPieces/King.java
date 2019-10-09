@@ -4,7 +4,7 @@ import Board.SquareSize;
 import Board.Squares;
 
 import java.awt.*;
-
+/*
 public class King extends Piece {
     @Override
     public void paintWhitePiece(Graphics g, int coordX, int coordY) {
@@ -47,3 +47,5 @@ public class King extends Piece {
 
     }
 }
+
+ */

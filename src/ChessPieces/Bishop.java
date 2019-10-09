@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 
 //LÖPARE
+/*
 public class Bishop extends Piece {
 
     public void paintWhitePiece(Graphics g, int coordX, int coordY){
@@ -47,3 +48,4 @@ public class Bishop extends Piece {
 
     }
 }
+*/
