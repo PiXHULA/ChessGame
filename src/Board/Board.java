@@ -30,26 +30,26 @@ public class Board extends JPanel {
         TileClass board = new TileClass();
         board.paintComponent(g);
 
-/*
+
         //WHITE CHESSPLAYER
         Pawn wP1 = new Pawn();
-        Piece wP2 = new Pawn();
-        Piece wP3 = new Pawn();
-        Piece wP4 = new Pawn();
-        Piece wP5 = new Pawn();
-        Piece wP6 = new Pawn();
-        Piece wP7 = new Pawn();
-        Piece wP8 = new Pawn();
-        Piece wB1 = new Bishop();
-        Piece wB2 = new Bishop();
-        Piece wKn1 = new Knight();
-        Piece wKn2 = new Knight();
-        Piece wR1 = new Rook();
-        Piece wR2 = new Rook();
-        Piece wQ1 = new Queen();
-        Piece wK1 = new King();
+//        Piece wP2 = new Pawn();
+//        Piece wP3 = new Pawn();
+//        Piece wP4 = new Pawn();
+//        Piece wP5 = new Pawn();
+//        Piece wP6 = new Pawn();
+//        Piece wP7 = new Pawn();
+//        Piece wP8 = new Pawn();
+//        Piece wB1 = new Bishop();
+//        Piece wB2 = new Bishop();
+//        Piece wKn1 = new Knight();
+//        Piece wKn2 = new Knight();
+//        Piece wR1 = new Rook();
+//        Piece wR2 = new Rook();
+//        Piece wQ1 = new Queen();
+//        Piece wK1 = new King();
 //
-//        wP1.paintWhitePiece(g, Squares.B1.getCoordX(),Squares.B1.getCoordY());
+          wP1.paintWhitePiece(g, Squares.B1.getCoordX(),Squares.B1.getCoordY());
 //        wP2.paintWhitePiece(g, Squares.B2.getCoordX(),Squares.B2.getCoordY());
 //        wP3.paintWhitePiece(g, Squares.B3.getCoordX(),Squares.B3.getCoordY());
 //        wP4.paintWhitePiece(g, Squares.B4.getCoordX(),Squares.B4.getCoordY());
@@ -66,29 +66,28 @@ public class Board extends JPanel {
 //        wQ1.paintWhitePiece(g,Squares.A4.getCoordX(),Squares.A4.getCoordY());
 //        wK1.paintWhitePiece(g,Squares.A5.getCoordX(),Squares.A5.getCoordY());
 
-//        wP1.moveFromLocation(g, Squares.B1);
-        //paintWhiteSquare(g, Squares.B1.getCoordX(),Squares.B1.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
-//        wP1.movetoLocation(g, Squares.B1, Squares.C1);
-
-//        wP1.moveFromLocation(g, Squares.C1);
-        //paintBlackSquare(g, Squares.C1.getCoordX(),Squares.C1.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
-//        wP1.movetoLocation(g, Squares.D1, Squares.D1);
-
-
+        //CLEARING THE PREVIOUS SQUARE BY PAINTING ANOTHER, WORKS ONLY WITH BLACK SQUARES. NEED A LOGIC FOR DRAWING THE
+        //CORRECT COLOR DEPENDING ON ENUM.
+        //ENUM LIST OF BLACK SQUARES ?
+        //ENUM LIST OF WHITE SQUARES ?
+        wP1.movetoLocation(g, Squares.B1, Squares.D2);
+        wP1.movetoLocation(g, Squares.D2, Squares.D1);
+        wP1.movetoLocation(g, Squares.D1, Squares.D4);
+        wP1.movetoLocation(g, Squares.D4, Squares.E5);
         //BLACK CHESSPLAYER
-        Piece bP1 = new Pawn();
-        Piece bP2 = new Pawn();
-        Piece bP3 = new Pawn();
-        Piece bP4 = new Pawn();
-        Piece bP5 = new Pawn();
-        Piece bP6 = new Pawn();
-        Piece bP7 = new Pawn();
-        Piece bP8 = new Pawn();
-        Piece bB1 = new Bishop();
-        Piece bKn1 = new Knight();
-        Piece bR1 = new Rook();
-        Piece bQ1 = new Queen();
-        Piece bK1 = new King();
+//        Piece bP1 = new Pawn();
+//        Piece bP2 = new Pawn();
+//        Piece bP3 = new Pawn();
+//        Piece bP4 = new Pawn();
+//        Piece bP5 = new Pawn();
+//        Piece bP6 = new Pawn();
+//        Piece bP7 = new Pawn();
+//        Piece bP8 = new Pawn();
+//        Piece bB1 = new Bishop();
+//        Piece bKn1 = new Knight();
+//        Piece bR1 = new Rook();
+//        Piece bQ1 = new Queen();
+//        Piece bK1 = new King();
 
 //        bP1.paintBlackPiece(g, Squares.G1.getCoordX(),Squares.G1.getCoordY());
 //        bP2.paintBlackPiece(g, Squares.G2.getCoordX(),Squares.G2.getCoordY());
@@ -107,7 +106,7 @@ public class Board extends JPanel {
 //        bK1.paintBlackPiece(g,Squares.H4.getCoordX(),Squares.H4.getCoordY());
 //        bQ1.paintBlackPiece(g,Squares.H5.getCoordX(),Squares.H5.getCoordY());
 
-*/
+
 
     }
 }

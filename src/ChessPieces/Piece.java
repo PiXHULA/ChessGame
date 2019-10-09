@@ -11,4 +11,5 @@ public abstract class Piece extends JPanel implements Movement {
 
     public abstract void paintWhitePiece(Graphics g, int coordX, int coordY);
     public abstract void paintBlackPiece(Graphics g, int coordX, int coordY);
+
 }
