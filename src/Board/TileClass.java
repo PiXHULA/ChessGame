@@ -13,52 +13,38 @@ public class TileClass extends JPanel {
         g.setColor(Color.black);
         g.fillRect(coordX,coordY,sizeX,sizeY);
     }
+
+    //DRAW BOARD WITH A Double FOR-LOOP - FINALLY WORKING!
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        //SÄTTER UT NYA KOORDINATER SOM SKA RÄKNA UT STARTPUNKT X & Y och öka med SquareSize.SQUARESIZE.getSizeX
-
-        int coordX = 0;
-        int coordY = 0;
+        int startX = 0;
+        int startY = 0;
         for(int i = 1; i <= 8; i++){
-            if (coordX > 0)
-                coordY += SquareSize.SQUARESIZE.getSize();
             for (int j = 1; j <= 8; j++){
-//                if (i * j == 1 || i * j == 3 || i * j == 5 || i * j == 7)
-//                    paintBlackSquare(g, coordX , coordY,
-//                              SquareSize.SQUARESIZE.getSize(),SquareSize.SQUARESIZE.getSize());
-//                else if (i * j == 2 || i * j == 4 || i * j == 6 || i * j == 8)
-//                    paintWhiteSquare(g, coordX, coordY,
-//                            SquareSize.SQUARESIZE.getSize(), SquareSize.SQUARESIZE.getSize());
-                if (i * j % 2 == 1)
-                    paintBlackSquare(g,
-                            coordX, coordY,
+                if (j == 1)
+                startX = 0;
+                if ((i + j) % 2 == 1){
+                    paintBlackSquare(g, startX, startY,
                             SquareSize.SQUARESIZE.getSize(), SquareSize.SQUARESIZE.getSize());
-                else if (i * j % 2 == 0)
+                }
+                else if ((i + j) % 2 == 0){
                     paintWhiteSquare(g,
-                            coordX, coordY,
+                            startX, startY,
                             SquareSize.SQUARESIZE.getSize(), SquareSize.SQUARESIZE.getSize());
-            coordX += SquareSize.SQUARESIZE.getSize();
-            if (coordX == SquareSize.SQUARESIZE.getSize() * 8)
-                coordX = 0;
+                }
+                if (j == 8){
+                    startY += SquareSize.SQUARESIZE.getSize();
+                }
+                startX += SquareSize.SQUARESIZE.getSize();
 
             }
         }
     }
 
-
+//EARLIER BOARDDRAW - SAVED IF NEED FOR LIST.
     /*
-    //Skapa tiles med Squares storlekar och måla upp?
-
-    public void paintWhiteSquare(Graphics g, int coordX, int coordY, int sizeX, int sizeY){
-        g.setColor(white);
-        g.fillRect(coordX,coordY,sizeX,sizeY);
-    }
-    public void paintBlackSquare(Graphics g, int coordX, int coordY, int sizeX, int sizeY){
-        g.setColor(black);
-        g.fillRect(coordX,coordY,sizeX,sizeY);
-    }
     paintBlackSquare(g, Squares.A1.getCoordX(),Squares.A1.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
     paintWhiteSquare(g, Squares.A2.getCoordX(),Squares.A2.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
     paintBlackSquare(g, Squares.A3.getCoordX(),Squares.A3.getCoordY(),SquareSize.SQUARESIZE.getSizeX(),SquareSize.SQUARESIZE.getSizeY());
