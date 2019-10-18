@@ -2,7 +2,7 @@ package Board;
 
 public enum BoardSize {
     //OBS! NEEDS TO BE ABLE TO DIVIDE BY 8
-    BOARDSIZE(800,800);
+    BOARDSIZE(600,600);
 
     private int sizeX;
     private int sizeY;

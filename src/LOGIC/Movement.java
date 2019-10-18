@@ -1,11 +1,12 @@
 package LOGIC;
 
 import Board.Squares;
+import ChessPieces.ChessPieceColor;
 
 import java.awt.*;
 
 public interface Movement {
     void showLocation();
-    void movetoLocation(Graphics g, Squares from, Squares to);
+    void movetoLocation(Graphics g, ChessPieceColor CPC, Squares from, Squares to);
     void showMovement();
 }

@@ -1,5 +1,7 @@
 package Board;
 
+import ChessPieces.ChessPieceColor;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -13,32 +15,49 @@ public class TileClass extends JPanel {
         g.setColor(Color.black);
         g.fillRect(coordX,coordY,sizeX,sizeY);
     }
+    /*
+    public static void paintSquareAfterMovingPiece(Graphics g, ChessPieceColor cpc, int coordX, int coordY, int sizeX, int sizeY) {
+        if (cpc == ChessPieceColor.WHITE) {
+            g.setColor(Color.white);
+            g.fillRect(coordX, coordY, sizeX, sizeY);
+        }
+        if (cpc == ChessPieceColor.BLACK) {
+            g.setColor(Color.black);
+            g.fillRect(coordX, coordY, sizeX, sizeY);
+        }
+    }
 
-    //DRAW BOARD WITH A Double FOR-LOOP - FINALLY WORKING!
+     */
+    public static void paintSquareAfterMovingPiece(Graphics g, Squares square) {
+        if (square.getColor().equals("White")) {
+            g.setColor(Color.white);
+            g.fillRect(square.getCoordX(), square.getCoordY(), SquareSize.SQUARESIZE.getSize(), SquareSize.SQUARESIZE.getSize());
+        }
+        if (square.getColor().equals("Black")) {
+            g.setColor(Color.black);
+            g.fillRect(square.getCoordX(), square.getCoordY(), SquareSize.SQUARESIZE.getSize(), SquareSize.SQUARESIZE.getSize());
+        }
+    }
+
+    //DRAW BOARD WITH A Double FOR-LOOP
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         int startX = 0;
         int startY = 0;
         for(int i = 1; i <= 8; i++){
             for (int j = 1; j <= 8; j++){
                 if (j == 1)
-                startX = 0;
-                if ((i + j) % 2 == 1){
+                    startX = 0;
+                if ((i + j) % 2 == 1)
                     paintBlackSquare(g, startX, startY,
                             SquareSize.SQUARESIZE.getSize(), SquareSize.SQUARESIZE.getSize());
-                }
-                else if ((i + j) % 2 == 0){
-                    paintWhiteSquare(g,
-                            startX, startY,
+                else if ((i + j) % 2 == 0)
+                    paintWhiteSquare(g, startX, startY,
                             SquareSize.SQUARESIZE.getSize(), SquareSize.SQUARESIZE.getSize());
-                }
-                if (j == 8){
+                if (j == 8)
                     startY += SquareSize.SQUARESIZE.getSize();
-                }
                 startX += SquareSize.SQUARESIZE.getSize();
-
             }
         }
     }
