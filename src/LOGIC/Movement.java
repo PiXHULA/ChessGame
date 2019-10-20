@@ -7,6 +7,6 @@ import java.awt.*;
 
 public interface Movement {
     void showLocation();
-    void movetoLocation(Graphics g, ChessPieceColor CPC, Squares from, Squares to);
+    void moveToSquare(Graphics g, ChessPieceColor CPC, Squares from, Squares to);
     void showMovement();
 }

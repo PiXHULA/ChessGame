@@ -2,8 +2,8 @@ package Board;
 
 import javax.swing.*;
 
-public class BoardDemo extends JFrame {
-    public BoardDemo(){
+public class BoardCreation extends JFrame {
+    public BoardCreation(){
         add(new Board());
         pack();
         setVisible(true);

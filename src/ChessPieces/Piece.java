@@ -25,7 +25,7 @@ public abstract class Piece extends JPanel implements Movement {
         this.square = square;
     }
 
-    public ChessPieceColor getCPC() {
+    public ChessPieceColor getColor() {
         return CPC;
     }
     public Squares getSquare() {
