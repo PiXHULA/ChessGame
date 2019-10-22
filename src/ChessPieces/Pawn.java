@@ -14,6 +14,7 @@ public class Pawn extends Piece {
 
     public Pawn(Squares square, ChessPieceColor CPC) {
         super(square, CPC);
+        Squares.ToOccupied(square);
     }
 
     @Override
@@ -25,11 +26,9 @@ public class Pawn extends Piece {
     public void paintPiece(Graphics g, Squares squares, ChessPieceColor CPC) {
         if (CPC == ChessPieceColor.WHITE) {
             paintWhitePiece(g, squares);
-            Squares.FromEmptyToOccupied(squares);
         }
         if (CPC == ChessPieceColor.BLACK){
             paintBlackPiece(g, squares);
-            Squares.FromEmptyToOccupied(squares);
         }
     }
 
@@ -69,15 +68,15 @@ public class Pawn extends Piece {
 
     private void moveFromLocation(Graphics g, Squares from){
         TileClass.paintSquareAfterMovingPiece(g, from);
+        Squares.ToEmpty(from);
+        repaint();
     }
     @Override
     public void moveToSquare(Graphics g, ChessPieceColor CPC, Squares from, Squares to) {
-            Squares.FromOccupiedToEmpty(from);
-            Squares.FromEmptyToOccupied(to);
             moveFromLocation(g, from);
+            Squares.ToOccupied(to);
             paintPiece(g, to, CPC);
             setSquare(to);
-
     }
 
     @Override

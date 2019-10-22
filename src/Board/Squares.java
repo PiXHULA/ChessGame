@@ -85,14 +85,23 @@ public enum Squares {
     private String color;
     public static List<Squares> emptySquares = new ArrayList<Squares>(Arrays.asList(Squares.values()));
     public static List<Squares> occupiedSquares = new ArrayList<Squares>();
-    public static void FromEmptyToOccupied(Squares square){
-        emptySquares.remove(square);
-        occupiedSquares.add(square);
+    public static void FromEmptyToOccupied(Squares from, Squares to){
+        emptySquares.remove(from);
+        occupiedSquares.add(to);
     }
-    public static void FromOccupiedToEmpty(Squares square){
-        occupiedSquares.remove(square);
-        emptySquares.add(square);
+    public static void ToOccupied(Squares from){
+        emptySquares.remove(from);
+        occupiedSquares.add(from);
     }
+    public static void FromOccupiedToEmpty(Squares from, Squares to){
+        occupiedSquares.remove(from);
+        emptySquares.add(to);
+    }
+    public static void ToEmpty(Squares to){
+        occupiedSquares.remove(to);
+        emptySquares.add(to);
+    }
+
 
     /*
     {
