@@ -1,34 +1,36 @@
 package Board;
 
+import LOGIC.Square;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class TileClass extends JPanel {
     //Method for repainting square after movement
-    public static void paintSquareAfterMovingPiece(Graphics g, Squares square) {
-        if (square.getColor().equals("White")) {
+    public static void paintSquareAfterMovingPiece(Graphics g, Square square) {
+        if (square.getSquare().getColor().equals("White")) {
             TileClass.paintWhiteSquare(g, square);
         }
-        if (square.getColor().equals("Black")) {
+        if (square.getSquare().getColor().equals("White")) {
             TileClass.paintBlackSquare(g, square);
         }
     }
-    public static void paintWhiteSquare(Graphics g, Squares square){
-        g.setColor(Color.white);
-        g.fillRect(square.getCoordX(),square.getCoordY(),SquareSize.SQUARESIZE.getSize(),SquareSize.SQUARESIZE.getSize());
+    public static void paintWhiteSquare(Graphics g, Square square){
+        g.setColor(new Color(255,228,196));
+        g.fillRect(square.getSquare().getCoordX(),square.getSquare().getCoordY(),SquareSize.SQUARESIZE.getSize(),SquareSize.SQUARESIZE.getSize());
     }
-    public static void paintBlackSquare(Graphics g, Squares square){
-        g.setColor(Color.black);
-        g.fillRect(square.getCoordX(),square.getCoordY(),SquareSize.SQUARESIZE.getSize(),SquareSize.SQUARESIZE.getSize());
+    public static void paintBlackSquare(Graphics g, Square square){
+        g.setColor(new Color(181,113,34));
+        g.fillRect(square.getSquare().getCoordX(),square.getSquare().getCoordY(),SquareSize.SQUARESIZE.getSize(),SquareSize.SQUARESIZE.getSize());
     }
 
     //Methods for creating the board
     public void paintWhiteSquare(Graphics g, int coordX, int coordY, int sizeX, int sizeY){
-        g.setColor(Color.white);
+        g.setColor(new Color(255,228,196));
         g.fillRect(coordX,coordY,sizeX,sizeY);
     }
     public void paintBlackSquare(Graphics g, int coordX, int coordY, int sizeX, int sizeY){
-        g.setColor(Color.black);
+        g.setColor(new Color(181,113,34));
         g.fillRect(coordX,coordY,sizeX,sizeY);
     }
 

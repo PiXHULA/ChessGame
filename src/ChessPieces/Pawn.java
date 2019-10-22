@@ -1,61 +1,54 @@
 package ChessPieces;
 
 import Board.SquareSize;
-import Board.Squares;
+import Board.SquaresEnum;
 import Board.TileClass;
-import LOGIC.Movement;
+import LOGIC.Square;
 
-import javax.swing.*;
 import java.awt.*;
 
 //BONDE
 
 public class Pawn extends Piece {
 
-    public Pawn(Squares square, ChessPieceColor CPC) {
+    public Pawn(Graphics g,Square square, ChessPieceColor CPC) {
         super(square, CPC);
-        Squares.ToOccupied(square);
+        paintPiece(g,square,CPC);
     }
 
     @Override
-    public void setSquare(Squares square) {
-        super.setSquare(square);
+    public void setSquare(Square square) {
+       super.setSquare(square);
     }
 
     @Override
-    public void paintPiece(Graphics g, Squares squares, ChessPieceColor CPC) {
+    public void paintPiece(Graphics g, Square square, ChessPieceColor CPC) {
         if (CPC == ChessPieceColor.WHITE) {
-            paintWhitePiece(g, squares);
+            paintWhitePiece(g, square);
         }
         if (CPC == ChessPieceColor.BLACK){
-            paintBlackPiece(g, squares);
+            paintBlackPiece(g, square);
         }
     }
 
     @Override
-    public void paintWhitePiece(Graphics g, Squares square){
-        g.setColor(Color.black);
-        g.drawRect(square.getCoordX() + 10,square.getCoordY() + 10, SquareSize.SQUARESIZE.getSize() - 20
-                ,SquareSize.SQUARESIZE.getSize() - 20);
+    public void paintWhitePiece(Graphics g, Square square){
         g.setColor(Color.white);
-        g.fillRect(square.getCoordX() + 19,square.getCoordY() + 19, SquareSize.SQUARESIZE.getSize() / 2
+        g.fillRect(square.getSquare().getCoordX() + 19,square.getSquare().getCoordY() + 19, SquareSize.SQUARESIZE.getSize() / 2
                 ,SquareSize.SQUARESIZE.getSize() / 2);
         g.setColor(Color.black);
         g.setFont(new Font("Arial", Font.BOLD, 20));
-        g.drawString("P", square.getCoordX() + 30, square.getCoordY() + 45);
+        g.drawString("P", square.getSquare().getCoordX() + 30, square.getSquare().getCoordY() + 45);
     }
 
     @Override
-    public void paintBlackPiece(Graphics g, Squares square){
-        g.setColor(Color.white);
-        g.drawRect(square.getCoordX() + 10,square.getCoordY() + 10, SquareSize.SQUARESIZE.getSize() - 20
-                ,SquareSize.SQUARESIZE.getSize() - 20);
-        g.setColor(Color.white);
-        g.fillRect(square.getCoordX() + 19,square.getCoordY() + 19, SquareSize.SQUARESIZE.getSize() / 2
-                ,SquareSize.SQUARESIZE.getSize() / 2);
+    public void paintBlackPiece(Graphics g, Square square){
         g.setColor(Color.black);
+        g.fillRect(square.getSquare().getCoordX() + 19,square.getSquare().getCoordY() + 19, SquareSize.SQUARESIZE.getSize() / 2
+                ,SquareSize.SQUARESIZE.getSize() / 2);
+        g.setColor(Color.white);
         g.setFont(new Font("Arial", Font.BOLD, 20));
-        g.drawString("P", square.getCoordX() + 30, square.getCoordY() + 45);
+        g.drawString("P", square.getSquare().getCoordX() + 30, square.getSquare().getCoordY() + 45);
     }
 
     @Override
@@ -66,17 +59,17 @@ public class Pawn extends Piece {
     public void showLocation() {
     }
 
-    private void moveFromLocation(Graphics g, Squares from){
+    private void moveFromLocation(Graphics g, Square from){
         TileClass.paintSquareAfterMovingPiece(g, from);
-        Squares.ToEmpty(from);
+        from.setEmpty(true);
         repaint();
     }
     @Override
-    public void moveToSquare(Graphics g, ChessPieceColor CPC, Squares from, Squares to) {
-            moveFromLocation(g, from);
-            Squares.ToOccupied(to);
-            paintPiece(g, to, CPC);
-            setSquare(to);
+    public void moveToSquare(Graphics g, Piece piece, ChessPieceColor CPC, Square from, Square to) {
+        moveFromLocation(g, from);
+        to.setPieceToSquare(piece);
+        paintPiece(g, to, CPC);
+
     }
 
     @Override

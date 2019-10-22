@@ -1,9 +1,5 @@
 package ChessPieces;
 
-import Board.SquareSize;
-import Board.Squares;
-
-import java.awt.*;
 /*
 public class King extends Piece {
     @Override

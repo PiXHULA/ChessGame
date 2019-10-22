@@ -1,12 +1,5 @@
 package ChessPieces;
 
-import Board.SquareSize;
-import Board.Squares;
-import LOGIC.Movement;
-
-import javax.swing.*;
-import java.awt.*;
-
 //LÖPARE
 /*
 public class Bishop extends Piece {

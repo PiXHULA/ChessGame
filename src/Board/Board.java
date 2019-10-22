@@ -1,13 +1,15 @@
 package Board;
 
 import ChessPieces.*;
+import LOGIC.ChessUti;
+import LOGIC.Square;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class Board extends JPanel {
 
     public Board(){
-        setName("CHESSGAME");
         setBackground(Color.white);
         setPreferredSize(new Dimension(BoardSize.BOARDSIZE.getSizeX()
                 , BoardSize.BOARDSIZE.getSizeY()));
@@ -18,21 +20,31 @@ public class Board extends JPanel {
         super.paintComponent(g);
         TileClass board = new TileClass();
         board.paintComponent(g);
+        ChessUti uti = new ChessUti();
 
         //WHITE CHESSPLAYER
-        System.out.println(Squares.emptySquares);
-        Pawn wP1 = new Pawn(Squares.B1,ChessPieceColor.WHITE);
-        System.out.println(Squares.emptySquares);
-        System.out.println(Squares.occupiedSquares);
+        Piece wP1 = new Pawn(g, ChessUti.getSquare("B1"),ChessPieceColor.WHITE);
+        Piece wP2 = new Pawn(g, ChessUti.getSquare("B2"),ChessPieceColor.WHITE);
+        Piece wP3 = new Pawn(g, ChessUti.getSquare("B3"),ChessPieceColor.WHITE);
+        Piece wP4 = new Pawn(g, ChessUti.getSquare("B4"),ChessPieceColor.WHITE);
+        Piece wP5 = new Pawn(g, ChessUti.getSquare("B5"),ChessPieceColor.WHITE);
+        Piece wP6 = new Pawn(g, ChessUti.getSquare("B6"),ChessPieceColor.WHITE);
+        Piece wP7 = new Pawn(g, ChessUti.getSquare("B7"),ChessPieceColor.WHITE);
+        Piece wP8 = new Pawn(g, ChessUti.getSquare("B8"),ChessPieceColor.WHITE);
 
-
-
-        wP1.paintPiece(g,wP1.getSquare(),wP1.getColor());
-
-        wP1.moveToSquare(g,wP1.getColor(),wP1.getSquare(),Squares.A2);
-        wP1.moveToSquare(g,wP1.getColor(),wP1.getSquare(),Squares.A5);
-        System.out.println(Squares.emptySquares);
-        System.out.println(Squares.occupiedSquares);
+        //BLACK CHESSPLAYER
+        Piece bP1 = new Pawn(g, ChessUti.getSquare("G1"),ChessPieceColor.BLACK);
+        Piece bP2 = new Pawn(g, ChessUti.getSquare("G2"),ChessPieceColor.BLACK);
+        Piece bP3 = new Pawn(g, ChessUti.getSquare("G3"),ChessPieceColor.BLACK);
+        Piece bP4 = new Pawn(g, ChessUti.getSquare("G4"),ChessPieceColor.BLACK);
+        Piece bP5 = new Pawn(g, ChessUti.getSquare("G5"),ChessPieceColor.BLACK);
+        Piece bP6 = new Pawn(g, ChessUti.getSquare("G6"),ChessPieceColor.BLACK);
+        Piece bP7 = new Pawn(g, ChessUti.getSquare("G7"),ChessPieceColor.BLACK);
+        Piece bP8 = new Pawn(g, ChessUti.getSquare("G8"),ChessPieceColor.BLACK);
+        System.out.println(ChessUti.getSquare("B2").getEmpty());
+        System.out.println(ChessUti.getSquare("D2").getEmpty());
+        ChessUti.checkSquare(g,ChessUti.getSquare("B2"),wP1);
+        ChessUti.checkSquare(g,ChessUti.getSquare("D2"),wP1);
 
 
 

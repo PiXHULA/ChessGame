@@ -1,10 +1,5 @@
 package ChessPieces;
 
-import Board.SquareSize;
-import Board.Squares;
-
-import java.awt.*;
-
 //DROTTNING
 /*
 public class Queen extends Piece{
