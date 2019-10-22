@@ -8,6 +8,7 @@ public class BoardCreation extends JFrame {
         setTitle("Chess");
         pack();
         setVisible(true);
+        setLocation(SquareSize.SQUARESIZE.getSize() * 4, SquareSize.SQUARESIZE.getSize() / 2 );
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }
