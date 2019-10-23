@@ -13,23 +13,26 @@ public class ChessUti {
     public static List<Square> Squares = new LinkedList<>();
 
     public static void checkSquare(Graphics g, Square square, Piece piece) {
-        if (!square.getEmpty()){
+        if (!square.getEmpty()) {
             if (square.getPiece().getColor().equals(piece.getColor())) {
                 System.out.println("Cannot move to location since one of your own pieces is" +
                         " already there");
-            } else if (!square.getPiece().getColor().equals(piece.getColor()))
-                piece.moveToSquare(g, piece, piece.getColor(), piece.getSquare(),square);
+            } else if (!square.getPiece().getColor().equals(piece.getColor())) {
+                piece.moveToSquare(g, piece, square);
+            }
+        } else {
+            piece.moveToSquare(g, piece, square);
         }
-        else
-            piece.moveToSquare(g, piece, piece.getColor(), piece.getSquare(),square);
     }
-    public static Square getSquare (String square){
-        for(Square s: Squares){
+
+    public static Square getSquare(String square) {
+        for (Square s : Squares) {
             if (s.getSquare().toString().equalsIgnoreCase(square))
                 return s;
         }
         return ChessUti.getSquare(square);
     }
+
     public ChessUti() {
         //Creating Squares
         Square A1 = new Square(SquaresEnum.A1);

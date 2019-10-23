@@ -65,10 +65,10 @@ public class Pawn extends Piece {
         repaint();
     }
     @Override
-    public void moveToSquare(Graphics g, Piece piece, ChessPieceColor CPC, Square from, Square to) {
-        moveFromLocation(g, from);
+    public void moveToSquare(Graphics g, Piece piece, Square to) {
+        moveFromLocation(g, piece.getSquare());
         to.setPieceToSquare(piece);
-        paintPiece(g, to, CPC);
+        paintPiece(g, to, piece.getColor());
 
     }
 

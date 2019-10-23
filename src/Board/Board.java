@@ -41,10 +41,9 @@ public class Board extends JPanel {
         Piece bP6 = new Pawn(g, ChessUti.getSquare("G6"),ChessPieceColor.BLACK);
         Piece bP7 = new Pawn(g, ChessUti.getSquare("G7"),ChessPieceColor.BLACK);
         Piece bP8 = new Pawn(g, ChessUti.getSquare("G8"),ChessPieceColor.BLACK);
-        System.out.println(ChessUti.getSquare("B2").getEmpty());
-        System.out.println(ChessUti.getSquare("D2").getEmpty());
         ChessUti.checkSquare(g,ChessUti.getSquare("B2"),wP1);
-        ChessUti.checkSquare(g,ChessUti.getSquare("D2"),wP1);
+
+
 
 
 

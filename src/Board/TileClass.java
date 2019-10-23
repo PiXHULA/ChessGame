@@ -9,19 +9,21 @@ public class TileClass extends JPanel {
     //Method for repainting square after movement
     public static void paintSquareAfterMovingPiece(Graphics g, Square square) {
         if (square.getSquare().getColor().equals("White")) {
-            TileClass.paintWhiteSquare(g, square);
+            System.out.println("gamla X koord: " + square.getSquare().getCoordX());
+            System.out.println("gamla Y koord: " + square.getSquare().getCoordY());
+            TileClass.paintWhiteSquare(g, square.getSquare());
         }
-        if (square.getSquare().getColor().equals("White")) {
-            TileClass.paintBlackSquare(g, square);
+        if (square.getSquare().getColor().equals("Black")) {
+            TileClass.paintBlackSquare(g, square.getSquare());
         }
     }
-    public static void paintWhiteSquare(Graphics g, Square square){
+    public static void paintWhiteSquare(Graphics g, SquaresEnum square){
         g.setColor(new Color(255,228,196));
-        g.fillRect(square.getSquare().getCoordX(),square.getSquare().getCoordY(),SquareSize.SQUARESIZE.getSize(),SquareSize.SQUARESIZE.getSize());
+        g.fillRect(square.getCoordX(),square.getCoordY(),SquareSize.SQUARESIZE.getSize(),SquareSize.SQUARESIZE.getSize());
     }
-    public static void paintBlackSquare(Graphics g, Square square){
+    public static void paintBlackSquare(Graphics g, SquaresEnum square){
         g.setColor(new Color(181,113,34));
-        g.fillRect(square.getSquare().getCoordX(),square.getSquare().getCoordY(),SquareSize.SQUARESIZE.getSize(),SquareSize.SQUARESIZE.getSize());
+        g.fillRect(square.getCoordX(),square.getCoordY(),SquareSize.SQUARESIZE.getSize(),SquareSize.SQUARESIZE.getSize());
     }
 
     //Methods for creating the board
