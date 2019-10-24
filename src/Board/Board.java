@@ -20,7 +20,7 @@ public class Board extends JPanel {
         super.paintComponent(g);
         TileClass board = new TileClass();
         board.paintComponent(g);
-        ChessUti.addSquareToList(ChessUti.squareList);
+
 
         //WHITE CHESSPLAYER
         Piece wP1 = new Pawn(g, ChessUti.getSquare("B1"),ChessPieceColor.WHITE, "White pawn 1");

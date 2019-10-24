@@ -63,14 +63,14 @@ public class Pawn extends Piece {
 
     private void moveFromLocation(Graphics g, Square from){
         TileClass.paintSquareAfterMovingPiece(g, from);
-        from.setHasPiece(true);
         repaint();
     }
     @Override
     public void moveToSquare(Graphics g, Piece piece, ChessPieceColor CPC, Square from, Square to) {
         moveFromLocation(g, from);
-        to.setPieceToSquare(piece);
         paintPiece(g, to, CPC);
+        to.setPieceToSquare(piece);
+        to.setHasPiece(true);
 
     }
 

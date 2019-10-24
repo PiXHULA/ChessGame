@@ -13,10 +13,11 @@ public class ChessUti {
 
     public static void checkSquare(Graphics g, Square square, Piece piece) {
         if (square.getHasPiece()){
-            if (square.getPiece().getColor().equals(piece.getColor())) {
+            //if (square.getPiece().getColor().equals(piece.getColor())) {
+            if (false) {
                 System.out.println("Cannot move to location since one of your own pieces is" +
                         " already there");
-            } else
+            } else if (true)
                 piece.moveToSquare(g, piece, piece.getColor(), piece.getSquare(),square);
         }
         else

@@ -8,6 +8,7 @@ import javax.swing.*;
 
 public class Main extends JFrame {
     public static void main(String[] args) {
+        ChessUti.addSquareToList(ChessUti.squareList);
         BoardCreation b1 = new BoardCreation();
     }
 }
