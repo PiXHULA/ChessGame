@@ -9,10 +9,10 @@ import java.util.List;
 public class Square {
     SquaresEnum squareEnum;
     Piece piece;
-    boolean empty;
+    boolean hasPiece;
     public Square(SquaresEnum squaresEnum){
         this.squareEnum = squaresEnum;
-        this.empty = true;
+        this.hasPiece = false;
     }
 
     public SquaresEnum getSquare() {
@@ -27,16 +27,16 @@ public class Square {
         return piece;
     }
 
-    public void setPieceToSquare(Piece piece) {
+    public void  setPieceToSquare(Piece piece) {
         this.piece = piece;
-        setEmpty(false);
+        setHasPiece(true);
     }
 
 
-    public void setEmpty(boolean empty) {
-        this.empty = empty;
+    public void setHasPiece(boolean hasPiece) {
+        this.hasPiece = hasPiece;
     }
-    public boolean getEmpty(){
-        return this.empty;
+    public boolean getHasPiece(){
+        return this.hasPiece;
     }
 }

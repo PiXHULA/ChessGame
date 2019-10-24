@@ -11,7 +11,7 @@ public class TileClass extends JPanel {
         if (square.getSquare().getColor().equals("White")) {
             TileClass.paintWhiteSquare(g, square);
         }
-        if (square.getSquare().getColor().equals("White")) {
+        if (square.getSquare().getColor().equals("Black")) {
             TileClass.paintBlackSquare(g, square);
         }
     }

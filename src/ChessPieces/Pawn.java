@@ -10,10 +10,12 @@ import java.awt.*;
 //BONDE
 
 public class Pawn extends Piece {
-
-    public Pawn(Graphics g,Square square, ChessPieceColor CPC) {
+    String name;
+    public Pawn(Graphics g,Square square, ChessPieceColor CPC, String name) {
         super(square, CPC);
+        this.name = name;
         paintPiece(g,square,CPC);
+
     }
 
     @Override
@@ -61,7 +63,7 @@ public class Pawn extends Piece {
 
     private void moveFromLocation(Graphics g, Square from){
         TileClass.paintSquareAfterMovingPiece(g, from);
-        from.setEmpty(true);
+        from.setHasPiece(true);
         repaint();
     }
     @Override
@@ -77,5 +79,9 @@ public class Pawn extends Piece {
 
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
 }
 
